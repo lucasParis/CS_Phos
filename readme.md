@@ -1,4 +1,4 @@
-project Phos
+Phos
 ===
 
 USB Serial Protocol for Led Controllers
