@@ -21,3 +21,9 @@ void draw() {
   box(150);
   server.sendScreen();
 }
+
+void stop()
+{
+  super.exit();
+  println("sdfsdf");
+}
