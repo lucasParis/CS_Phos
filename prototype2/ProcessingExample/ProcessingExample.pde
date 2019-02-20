@@ -3,7 +3,7 @@ import codeanticode.syphon.*;
 SyphonServer server;
 
 void settings() {
-  size(18,396, P3D);
+  size(9,360, P3D);
   PJOGL.profile=1;
 }
 
