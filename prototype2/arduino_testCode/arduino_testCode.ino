@@ -1,6 +1,6 @@
 #include <FastLED.h>
 
-#define NUM_LEDS 396// 36 leds * 11 boxes, number of leds per output (9 per pcb)
+#define NUM_LEDS 360// 36 leds * 11 boxes, number of leds per output (9 per pcb)
 CRGB leds[9][NUM_LEDS];//holds the values of the leds for fastled output
 #define RATE 3 // 3 seems like the ideal value, slowdown if glitches appear at the end of the strips but watchout for dropping FPS
 
@@ -33,11 +33,11 @@ void loop() {
         int value = 0;
         value = (x * 3 + int(millis() * 0.001 * 10)) % 36;//formula generates a pixel moving down the strip
         value = (value == i) || (value == (i + 1));// double the pixel to get a group of 2 moving pixels
-
+//        value = 1;// double the pixel to get a group of 2 moving pixels
         //set led values (low brightness, multiply by 255 for full brightness
-        leds[x][i].red = int(value * 2);
-        leds[x][i].green =  int(value * 2);
-        leds[x][i].blue = int(value * 2);
+        leds[x][i].red = int(value * 20);
+        leds[x][i].green =  int(value * 20);
+        leds[x][i].blue = int(value * 20);
 
       }
     }
@@ -45,4 +45,3 @@ void loop() {
     lastOutputTime = millis();//update time for output counter
   }
 }
-
